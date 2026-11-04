@@ -1,6 +1,6 @@
 {
   "name": "@nestos/device-tty",
-  "version": "0.1.0",
+  "version": "0.5.1",
   "description": "Node.js pipe and native PTY drivers with platform-neutral interactive process contracts",
   "type": "module",
   "main": "./src/index.ts",
