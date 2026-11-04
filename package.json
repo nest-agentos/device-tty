@@ -1,0 +1,90 @@
+{
+  "name": "@itookit/device-tty",
+  "version": "0.1.0",
+  "description": "Node.js pipe and native PTY drivers with platform-neutral interactive process contracts",
+  "type": "module",
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "import": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
+    "./contracts": {
+      "types": "./src/contracts.ts",
+      "import": "./src/contracts.ts",
+      "default": "./src/contracts.ts"
+    }
+  },
+  "publishConfig": {
+    "access": "public",
+    "main": "./dist/index.cjs",
+    "module": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+      ".": {
+        "import": {
+          "types": "./dist/index.d.ts",
+          "default": "./dist/index.js"
+        },
+        "require": {
+          "types": "./dist/index.d.cts",
+          "default": "./dist/index.cjs"
+        }
+      },
+      "./contracts": {
+        "import": {
+          "types": "./dist/contracts.d.ts",
+          "default": "./dist/contracts.js"
+        },
+        "require": {
+          "types": "./dist/contracts.d.cts",
+          "default": "./dist/contracts.cjs"
+        }
+      }
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup && node scripts/check-package.mjs",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "prepack": "pnpm build",
+    "test:package": "node scripts/check-package.mjs"
+  },
+  "keywords": [
+    "itookit",
+    "tty",
+    "pty",
+    "shell",
+    "terminal"
+  ],
+  "author": "lizlok@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "node-pty": "^1.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.1"
+  },
+  "packageManager": "pnpm@10.20.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nest-agentos/device-tty.git"
+  },
+  "homepage": "https://github.com/nest-agentos/device-tty#readme",
+  "bugs": {
+    "url": "https://github.com/nest-agentos/device-tty/issues"
+  }
+}
