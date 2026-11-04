@@ -1,9 +1,9 @@
-# @itookit/device-tty
+# @nestos/device-tty
 
 独立的 Node.js 交互进程库，提供 pipe、真实 PTY 驱动和通用 TTY 契约。唯一直接运行依赖是 `node-pty ^1.1.0`；不依赖 MindOS、tools、VFS、Session 或 durable-kernel。
 
 ```ts
-import { NodeTTYDriver, collectOutput } from '@itookit/device-tty';
+import { NodeTTYDriver, collectOutput } from '@nestos/device-tty';
 
 const session = new NodeTTYDriver().spawn('/bin/sh', ['-c', 'read answer; echo "$answer"']);
 const output = collectOutput(session);
@@ -24,10 +24,10 @@ console.log(await output);
 只使用接口的浏览器或远端宿主从独立子入口导入，不加载 Node 或原生实现：
 
 ```ts
-import type { ITTYDriver, ITTYSession, ITTYSpawnOptions } from '@itookit/device-tty/contracts';
+import type { ITTYDriver, ITTYSession, ITTYSpawnOptions } from '@nestos/device-tty/contracts';
 ```
 
-MindOS 的 `@itookit/tools/contracts` 兼容转发这些类型。工具授权、命令策略、RPC、持久任务与审批界面由上层负责，不进入本库。
+MindOS 的 `@nestos/tools/contracts` 兼容转发这些类型。工具授权、命令策略、RPC、持久任务与审批界面由上层负责，不进入本库。
 
 ## 生命周期与恢复边界
 

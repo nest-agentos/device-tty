@@ -1,5 +1,5 @@
 {
-  "name": "@itookit/device-tty",
+  "name": "@nestos/device-tty",
   "version": "0.1.0",
   "description": "Node.js pipe and native PTY drivers with platform-neutral interactive process contracts",
   "type": "module",
@@ -81,7 +81,7 @@
   "packageManager": "pnpm@10.20.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nest-agentos/device-tty.git"
+    "url": "git+https://github.com/nest-agentos/device-tty.git"
   },
   "homepage": "https://github.com/nest-agentos/device-tty#readme",
   "bugs": {

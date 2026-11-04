@@ -1,4 +1,4 @@
-# @itookit/device-tty
+# @nestos/device-tty
 
 独立 Node.js pipe / PTY 驱动库；唯一直接运行依赖是 node-pty，不导入 MindOS、tools、VFS 或 kernel。
 
