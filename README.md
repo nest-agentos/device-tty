@@ -1,6 +1,6 @@
 # @nestos/device-tty
 
-独立的 Node.js 交互进程库，提供 pipe、真实 PTY 驱动和通用 TTY 契约。唯一直接运行依赖是 `node-pty ^1.1.0`；不依赖 MindOS、tools、VFS、Session 或 durable-kernel。
+独立的 Node.js 交互进程库，提供 pipe、真实 PTY 驱动和通用 TTY 契约。唯一直接运行依赖是 `node-pty ^1.1.0`；不依赖 NestOS、tools、VFS、Session 或 durable-kernel。
 
 ```ts
 import { NodeTTYDriver, collectOutput } from '@nestos/device-tty';
@@ -27,7 +27,7 @@ console.log(await output);
 import type { ITTYDriver, ITTYSession, ITTYSpawnOptions } from '@nestos/device-tty/contracts';
 ```
 
-MindOS 的 `@nestos/tools/contracts` 兼容转发这些类型。工具授权、命令策略、RPC、持久任务与审批界面由上层负责，不进入本库。
+NestOS 的 `@nestos/tools/contracts` 兼容转发这些类型。工具授权、命令策略、RPC、持久任务与审批界面由上层负责，不进入本库。
 
 ## 生命周期与恢复边界
 
@@ -46,4 +46,4 @@ pnpm test
 pnpm build
 ```
 
-构建输出 ESM、CJS 和对应声明；检查脚本验证依赖与 contracts 隔离。MindOS 使用 `libraries/device-tty` 子模块作为唯一开发工作树；在其中提交推送后，再更新主仓库的子模块提交。
+构建输出 ESM、CJS 和对应声明；检查脚本验证依赖与 contracts 隔离。NestOS 使用 `libraries/device-tty` 子模块作为唯一开发工作树；在其中提交推送后，再更新主仓库的子模块提交。
